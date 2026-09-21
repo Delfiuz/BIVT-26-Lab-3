@@ -20,6 +20,7 @@ namespace Lab3
             
 
             return count;
+            
         }
         public (int count, double average) Task2(int n)
         {
