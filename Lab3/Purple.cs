@@ -7,12 +7,13 @@ namespace Lab3
         public int Task1(int n, int r1, int r2)
         {
             int count = 0;
-
+            
             for (int i = 0; i < n; i++)
             {
-                double x = double.Parse(Console.ReadLine());
-                double y = double.Parse(Console.ReadLine());
-                if (r1 < x * x + y * y &&  r2 > x * x + y * y)
+                double x = double.Parse(Console.ReadLine()!);
+                double y = double.Parse(Console.ReadLine()!);
+                double dot = Math.Sqrt(x * x + y * y);
+                if (r1 < dot && r2 > dot)
                 {
                     count++;
                 }
@@ -25,9 +26,10 @@ namespace Lab3
             int count = 0;
             double average = 0;
 
-            // code here
+            for (int i = 1; i <= n; i++)
+            {
 
-            // end
+            }
 
             return (count, average);
         }
@@ -63,4 +65,5 @@ namespace Lab3
             return luck;
         }
     }
+    
 }
