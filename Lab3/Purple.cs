@@ -88,21 +88,80 @@ namespace Lab3
         }
         public (string solution, int attempts) Task4(int code, int limit)
         {
-            string solution = "Код не подобран";
+            string solution = "Система заблокирована!";
             int attempts = 0;
-            bool flag = true;
-            string status = "Аварийный выход";
-            string failed = "Система заблокирована";
+            string status = "Аварийный выход!";
+            string failed = "Система заблокирована!";
+
+
+            while (attempts < limit)
+            {
+                attempts++;
+                string gues = "";
+                bool flag = false;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    string input = Console.ReadLine();
+
+                    if (input == "-1")
+                    {
+                        flag = true;
+                        solution = status;
+                        break;
+                    }
+
+                    gues += input;
+                }
+
+                if (flag)
+                {
+                    break;
+                }
+
+                if (int.Parse(gues) == code)
+                {
+                    solution = "Доступ разрешен!";
+                    break;
+                }
+            }
 
             return (solution, attempts);
         }
         public double Task5(int a, int n)
         {
             double luck = 0;
+            
 
-            // code here
-
-            // end
+            for (int day = a; day < a + n; day++)
+            {
+                switch (day)
+                {
+                    case 1 or 8 or 15 or 22 or 29:
+                        luck *= 1.5;
+                        if (luck > 100)
+                            luck = 100;
+                        break;
+                    
+                    case 4 or 11 or 18 or 25:
+                        luck -= 10;
+                        if (luck < 0)
+                            luck = 0;
+                        break;
+                    
+                    case 7 or 14 or 21 or 28:
+                        if (luck < 50)
+                            luck = 55;
+                        break;
+                    
+                    default:
+                        luck += 5;
+                        if (luck > 100)
+                            luck = 100;
+                        break;
+                }
+            }
+            
 
             return luck;
         }
