@@ -11,7 +11,7 @@ namespace Lab3
             double x = double.Parse(Console.ReadLine());
             double y = double.Parse(Console.ReadLine());
 
-            double d = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+            double d = Math.Sqrt((x * x) + (y * y));
 
             if (d >= r1 && d <= r2)
             {
