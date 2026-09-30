@@ -24,14 +24,32 @@ namespace Lab3
         public (int count, double average) Task2(int n)
         {
             int count = 0;
+            int grad = 0;
             double average = 0;
-
-            for (int i = 1; i <= n; i++)
+            int stud = 1;
+            int lox = 0;
+            bool flag = false;
+            for (int i = 0; i < n * 4; i++)
             {
-
+                int g = int.Parse(Console.ReadLine()!);
+                count++;
+                grad += g;
+                if (g == 2 && flag)
+                {
+                    lox++;
+                    flag = false;
+                }
+                if (i % 4 == 0 && i != 0)
+                {
+                    stud += 1;
+                    flag = true;
+                }
             }
+            if (count != 0) average = (double)(grad / count);
+            Console.WriteLine(lox);
+            Console.WriteLine(average);
 
-            return (count, average);
+            return (lox, average);
         }
         public double Task3(int exams)
         {
