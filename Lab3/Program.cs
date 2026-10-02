@@ -177,16 +177,16 @@ namespace Lab3
             //Console.WriteLine($"Task3 test 5. Paste 10 inputs");
             //Console.WriteLine($"Task3 test 5 {purple.Task3(5) == 3.6}");
 
-            //Console.WriteLine($"Task4 test 1. Insert input until the task completes");
-            //Console.WriteLine($"Task4 test 1 {purple.Task4(000, 1) == ("Система заблокирована!", 1)}");
-            //Console.WriteLine($"Task4 test 2. Insert input until the task completes");
-            //Console.WriteLine($"Task4 test 2 {purple.Task4(000, 5) == ("Аварийный выход!", 4)}");
-            //Console.WriteLine($"Task4 test 3. Insert input until the task completes");
-            //Console.WriteLine($"Task4 test 3 {purple.Task4(123, 3) == ("Доступ разрешен!", 2)}");
-            //Console.WriteLine($"Task4 test 4. Insert input until the task completes");
-            //Console.WriteLine($"Task4 test 4 {purple.Task4(283, 3) == ("Доступ разрешен!", 3)}");
-            //Console.WriteLine($"Task4 test 5. Insert input until the task completes");
-            //Console.WriteLine($"Task4 test 5 {purple.Task4(283, 2) == ("Система заблокирована!", 2)}");
+            Console.WriteLine($"Task4 test 1. Insert input until the task completes");
+            Console.WriteLine($"Task4 test 1 {purple.Task4(000, 1) == ("Система заблокирована!", 1)}");
+            Console.WriteLine($"Task4 test 2. Insert input until the task completes");
+            Console.WriteLine($"Task4 test 2 {purple.Task4(000, 5) == ("Аварийный выход!", 4)}");
+            Console.WriteLine($"Task4 test 3. Insert input until the task completes");
+            Console.WriteLine($"Task4 test 3 {purple.Task4(123, 3) == ("Доступ разрешен!", 2)}");
+            Console.WriteLine($"Task4 test 4. Insert input until the task completes");
+            Console.WriteLine($"Task4 test 4 {purple.Task4(283, 3) == ("Доступ разрешен!", 3)}");
+            Console.WriteLine($"Task4 test 5. Insert input until the task completes");
+            Console.WriteLine($"Task4 test 5 {purple.Task4(283, 2) == ("Система заблокирована!", 2)}");
         }
     }
 }

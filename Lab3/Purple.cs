@@ -80,27 +80,22 @@ namespace Lab3
         public (string solution, int attempts) Task4(int code, int limit)
         {
             string solution = "Система заблокирована!";
+            string[] corrcode = code.ToString().Select(c => c.ToString()).ToArray();
             int attempts = 0;
             while (attempts < limit)
             {
                 attempts++;
-                string currcode = "";
-                for (;currcode.Length != 3;)
+                string[] currcode = { Console.ReadLine()!, Console.ReadLine()!, Console.ReadLine()! };
+                if (currcode.Contains("-1"))
                 {
-                    string a = Console.ReadLine()!;
-                    if (a == "-1")
-                    {
-                        solution = "Аварийный выход!";
-                        return (solution, attempts);
-                    }
-                    currcode += a;
+                    solution = "Аварийный выход!";
+                    return (solution, attempts);
                 }
-                if (currcode == Convert.ToString(code))
+                if (currcode.SequenceEqual(corrcode))
                 {
                     solution = "Доступ разрешен!";
                     return (solution, attempts);
                 }
-                
             }
             
             return (solution, attempts);
