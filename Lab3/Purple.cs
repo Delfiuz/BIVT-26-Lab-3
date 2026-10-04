@@ -32,29 +32,22 @@ namespace Lab3
 
             for (int i = 0; i < n; i++)
             {
-                bool flag = false;
+                int mark1 = int.Parse(Console.ReadLine());
+                int mark2 = int.Parse(Console.ReadLine());
+                int mark3 = int.Parse(Console.ReadLine());
+                int mark4 = int.Parse(Console.ReadLine());
 
-                for (int j = 1; j < 5; j++)
+                countoc += mark1 + mark2 + mark3 + mark4;
+
+                if (mark1 == 2 || mark2 == 2 || mark3 == 2 || mark4 == 2)
                 {
-                    int oc = int.Parse(Console.ReadLine());
-                    countoc = countoc + oc;
-
-                    if (oc == 2)
-                    {
-                        flag = true;
-                    }
+                    count++;
                 }
-
-                if (flag)
-                {
-                    count2++;
-                }
-        
             }
-
-            double srgroup = (double)countoc / (n * 4);
-            Console.WriteLine(srgroup);
-
+            
+            average = (double)countoc / (n * 4);
+            Console.WriteLine(average);
+            
             return (count, average);
         }
         public double Task3(int exams)
@@ -91,39 +84,34 @@ namespace Lab3
             string solution = "Система заблокирована!";
             int attempts = 0;
             string status = "Аварийный выход!";
-            string failed = "Система заблокирована!";
+            bool flag = false;
 
 
             while (attempts < limit)
             {
                 attempts++;
-                string gues = "";
-                bool flag = false;
+                int code1 = int.Parse(Console.ReadLine());
+                int code2 = int.Parse(Console.ReadLine());
+                int code3 = int.Parse(Console.ReadLine());
 
-                for (int i = 0; i < 3; i++)
+                if (code1 == -1 || code2 == -1 || code3 == -1)
                 {
-                    string input = Console.ReadLine();
-
-                    if (input == "-1")
-                    {
-                        flag = true;
-                        solution = status;
-                        break;
-                    }
-
-                    gues += input;
-                }
-
-                if (flag)
-                {
+                    solution = "Аварийный выход!";
                     break;
                 }
+                string attemptSTR = code1.ToString() + code2.ToString() + code3.ToString();
+                int attemptINT = int.Parse(attemptSTR);
 
-                if (int.Parse(gues) == code)
+                if (attemptINT == code)
                 {
-                    solution = "Доступ разрешен!";
+                    flag = true;
                     break;
                 }
+            }
+
+            if (flag)
+            {
+                solution = "Доступ разрешен!";
             }
 
             return (solution, attempts);
