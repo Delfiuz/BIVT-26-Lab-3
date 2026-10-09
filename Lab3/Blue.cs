@@ -25,7 +25,7 @@ namespace Lab3
                 string x1 = Console.ReadLine();
                 string y1 = Console.ReadLine();
                 int x = int.Parse(x1);
-                int y = int.Parse(x2);
+                int y = int.Parse(y1);
                 if (x>0 && y>0){
                     first ++;                    
                 }
@@ -63,10 +63,9 @@ namespace Lab3
         }
         public (int tasks, int serias) Task4(int time, int tasks)
         {
-            serias = 0;
+            int serias = 0;
             int seriasTime = 10;
             int taskTime = 10;
-            int seriasTime = 10;
             if (time < 1440)
             {
                 if (tasks > 0)
