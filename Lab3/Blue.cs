@@ -26,26 +26,17 @@ namespace Lab3
                 string y1 = Console.ReadLine();
                 int x = int.Parse(x1);
                 int y = int.Parse(x2);
-                switch(x, y)
-                {
-                    default:
-                    break;
-
-                    case x>0 && y>0:
-                    first ++;
-                    break;
-
-                    case x<0 && y>0:
-                    second ++;
-                    break;
-
-                    case x<0 && y<0:
+                if (x>0 && y>0){
+                    first ++;                    
+                }
+                if (x<0 && y>0){
+                    second ++;                    
+                }
+                if (x<0 && y<0){
                     third ++;
-                    break;
-
-                    case x>0 && y<0:
+                }
+                if (x>0 && y<0){
                     fourth ++;
-                    break;
                 }
             }
             return (first, second, third, fourth);
